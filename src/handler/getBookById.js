@@ -5,6 +5,7 @@ const getBookById = (request, h) => {
     const book = books.filter((n) => n.id === id)[0];
 
     if (book !== undefined) {
+        response.code(200);
         return {
             status: 'success',
             data: {
