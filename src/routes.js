@@ -1,4 +1,5 @@
 const { addBooks } = require("./handler/addBooks.js");
+const { deleteBookById } = require("./handler/deleteBookById.js");
 const { editBookById } = require("./handler/editBookById.js");
 const { getAllBooks } = require("./handler/getAllBooks.js");
 const { getBookById } = require("./handler/getBookById.js");
@@ -28,11 +29,11 @@ const routes = [
         path: '/books/{id}',
         handler: editBookById,
     },
-    // {
-    //     method: 'DELETE',
-    //     path: '/notes/{id}',
-    //     handler: deleteNoteByIdHandler,
-    // },
+    {
+        method: 'DELETE',
+        path: '/books/{id}',
+        handler: deleteBookById,
+    },
 ];
 
 module.exports = routes;
