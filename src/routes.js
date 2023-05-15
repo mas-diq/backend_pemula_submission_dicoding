@@ -1,4 +1,5 @@
 const { addBooks } = require("./handler/addBooks.js");
+const { editBookById } = require("./handler/editBookById.js");
 const { getAllBooks } = require("./handler/getAllBooks.js");
 const { getBookById } = require("./handler/getBookById.js");
 
@@ -21,11 +22,12 @@ const routes = [
         path: '/books/{id}',
         handler: getBookById,
     },
-    // {
-    //     method: 'PUT',
-    //     path: '/notes/{id}',
-    //     handler: editNoteByIdHandler,
-    // },
+    // Merubah 1 buku
+    {
+        method: 'PUT',
+        path: '/books/{id}',
+        handler: editBookById,
+    },
     // {
     //     method: 'DELETE',
     //     path: '/notes/{id}',
