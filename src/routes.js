@@ -1,24 +1,26 @@
 const { addBooks } = require("./handler/addBooks.js");
 const { getAllBooks } = require("./handler/getAllBooks.js");
+const { getBookById } = require("./handler/getBookById.js");
 
 const routes = [
-    // Menyimpan buku
+    // Menyimpan 1 buku
     {
         method: 'POST',
         path: '/books',
         handler: addBooks,
     },
-    // Menampilkan buku
+    // Menampilkan semua buku
     {
         method: 'GET',
         path: '/books',
         handler: getAllBooks,
     },
-    // {
-    //     method: 'GET',
-    //     path: '/notes/{id}',
-    //     handler: getNoteByIdHandler,
-    // },
+    // Menampilkan 1 buku
+    {
+        method: 'GET',
+        path: '/books/{id}',
+        handler: getBookById,
+    },
     // {
     //     method: 'PUT',
     //     path: '/notes/{id}',
