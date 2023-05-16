@@ -16,25 +16,21 @@ const editBookById = (request, h) => {
 
     const index = books.findIndex((book) => book.id === id);
 
-    if (name === "") {
+    if (name == null) {
         const response = h.response({
             status: 'fail',
             message: 'Gagal memperbarui buku. Mohon isi nama buku',
         });
         response.code(400);
         return response;
-    }
-
-    if (readPage > pageCount) {
+    } else if (readPage > pageCount) {
         const response = h.response({
             status: 'fail',
             message: 'Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount',
         });
         response.code(400);
         return response;
-    }
-
-    if (index !== -1) {
+    } else if (index !== -1) {
         books[index] = {
             ...books[index],
             name,
@@ -57,7 +53,7 @@ const editBookById = (request, h) => {
 
     const response = h.response({
         status: 'fail',
-        message: 'Gagal memperbarui catatan. Id tidak ditemukan',
+        message: 'Gagal memperbarui buku. Id tidak ditemukan',
     });
     response.code(404);
     return response;

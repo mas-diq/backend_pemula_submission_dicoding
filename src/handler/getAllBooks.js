@@ -4,7 +4,7 @@ const getAllBooks = () => {
     return {
         status: 'success',
         data: {
-            book: books.map(book => ({
+            books: books.map(book => ({
                 id: book.id,
                 name: book.name,
                 publisher: book.publisher
